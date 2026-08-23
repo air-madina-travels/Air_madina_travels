@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Air Madina Travels - Umrah, Hajj, Visa, Air Ticket, Hotel Booking and Tour Services in Dhaka.">
+
+    <title>Air Madina Travels</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #fff;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 10px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .brand-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #008f86;
+        }
+
+        .brand-name span {
+            color: #159447;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #008f86;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: transparent;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 25px 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(0,85,78,0.82),
+                    rgba(0,110,80,0.78)
+                ),
+                url("https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1800&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-logo {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            background: white;
+            padding: 10px;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        }
+
+        .hero h1 {
+            font-size: clamp(40px,7vw,72px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #dff51d;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 750px;
+            margin: auto auto 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #e2c313;
+            color: #173d30;
+        }
+
+        .btn-primary:hover {
+            background: #f2d72a;
+            transform: translateY(-3px);
+        }
+
+        .btn-light {
+            background: white;
+            color: #008f86;
+        }
+
+        .btn-light:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 90px 25px;
+            scroll-margin-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            color: #008f86;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            background: #f5fbfa;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .service-icon {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #e2f5f0;
+            font-size: 34px;
+        }
+
+        .service-card h3 {
+            color: #008f86;
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            border-radius: 20px;
+            background: #eaf8f5;
+        }
+
+        .about-text h2 {
+            color: #008f86;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .check-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .check-list li {
+            margin: 12px 0;
+        }
+
+        .check-list li::before {
+            content: "✓";
+            color: #008f86;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* ================= PACKAGES ================= */
+
+        .packages {
+            background: #f5fbfa;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .package-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .package-content {
+            padding: 25px;
+        }
+
+        .package-content h3 {
+            color: #008f86;
+            margin-bottom: 10px;
+        }
+
+        .package-content p {
+            color: #666;
+            margin-bottom: 18px;
+        }
+
+        /* ================= PAGES ================= */
+
+        .pages {
+            background: white;
+        }
+
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 25px;
+        }
+
+        .page-card {
+            padding: 35px 20px;
+            text-align: center;
+            background: #f5fbfa;
+            border-radius: 18px;
+            border: 1px solid #e2eeee;
+            transition: 0.3s;
+        }
+
+        .page-card:hover {
+            transform: translateY(-7px);
+            background: #e9f8f5;
+        }
+
+        .page-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .page-card h3 {
+            color: #008f86;
+            margin-bottom: 10px;
+        }
+
+        .page-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg,#008f86,#087f55);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .contact-info h3 {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            margin: 22px 0;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #008f86;
+            box-shadow: 0 0 0 3px rgba(0,143,134,0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #008f86;
+            color: white;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background: #006f69;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #053f3a;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer-logo {
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo h3 {
+            font-size: 25px;
+        }
+
+        .footer-logo span {
+            color: #dfe719;
+        }
+
+        footer p {
+            color: #cbd8d4;
+            margin: 5px 0;
+        }
+
+        /* ================= WHATSAPP ================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 62px;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            z-index: 999;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 768px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                display: none;
+                text-align: center;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 15px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .brand-name {
+                font-size: 17px;
+            }
+
+            .brand img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .hero-logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .service-grid,
+            .package-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pages-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            .contact-info {
+                text-align: center;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .pages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#home" class="brand">
+
+            <img
+                src="1000017357.jpg"
+                alt="Air Madina Travels Logo">
+
+            <div class="brand-name">
+                Air Madina <span>Travels</span>
+            </div>
+
+        </a>
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="Open navigation menu">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About Us</a>
+            </li>
+
+            <li>
+                <a href="#packages">Packages</a>
+            </li>
+
+            <li>
+                <a href="#pages">Pages</a>
+            </li>
+
+            <li>
+                <a href="#services">Services</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <img
+            class="hero-logo"
+            src="1000017357.jpg"
+            alt="Air Madina Travels Logo">
+
+        <h1>
+            Welcome to
+            <span>Air Madina Travels</span>
+        </h1>
+
+        <p>
+            Your trusted travel partner for Umrah, Hajj,
+            visa processing, air tickets, hotel booking
+            and memorable journeys.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#packages" class="btn btn-primary">
+                Explore Packages
+            </a>
+
+            <a href="tel:01967233633" class="btn btn-light">
+                Call Now
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT US ================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-image">
+
+                <img
+                    src="1000017357.jpg"
+                    alt="Air Madina Travels">
+
+            </div>
+
+            <div class="about-text">
+
+                <h2>About Us</h2>
+
+                <p>
+                    Air Madina Travels is a travel service
+                    company based in Dhaka, Bangladesh.
+                </p>
+
+                <p>
+                    We provide reliable travel assistance
+                    for Umrah, Hajj, air tickets, visa
+                    processing, hotel bookings and tour
+                    packages.
+                </p>
+
+                <ul class="check-list">
+
+                    <li>Umrah & Hajj travel services</li>
+                    <li>Air ticket booking</li>
+                    <li>Visa processing assistance</li>
+                    <li>Hotel booking services</li>
+                    <li>Tour and travel packages</li>
+
+                </ul>
+
+                <a href="#contact" class="btn btn-primary">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PACKAGES ================= -->
+
+<section class="packages" id="packages">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Our Packages</h2>
+
+            <p>
+                Choose a package and contact us for
+                current price and availability.
+            </p>
+
+        </div>
+
+        <div class="package-grid">
+
+            <div class="package-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85"
+                    alt="Umrah Package">
+
+                <div class="package-content">
+
+                    <h3>Umrah Package</h3>
+
+                    <p>
+                        Comfortable and organized Umrah
+                        travel arrangements.
+                    </p>
+
+                    <a href="#contact" class="btn btn-primary">
+                        Enquire Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="package-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=900&q=85"
+                    alt="Hajj Package">
+
+                <div class="package-content">
+
+                    <h3>Hajj Package</h3>
+
+                    <p>
+                        Ask us about available Hajj travel
+                        arrangements.
+                    </p>
+
+                    <a href="#contact" class="btn btn-primary">
+                        Enquire Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="package-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"
+                    alt="Tour Package">
+
+                <div class="package-content">
+
+                    <h3>Tour Package</h3>
+
+                    <p>
+                        Explore beautiful destinations with
+                        our customized tour services.
+                    </p>
+
+                    <a href="#contact" class="btn btn-primary">
+                        Enquire Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PAGES ================= -->
+
+<section class="pages" id="pages">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Pages</h2>
+
+            <p>
+                Explore Air Madina Travels and our
+                travel services.
+            </p>
+
+        </div>
+
+        <div class="pages-grid">
+
+            <div class="page-card">
+
+                <div class="page-icon">🏠</div>
+
+                <h3>Home</h3>
+
+                <p>
+                    Return to our homepage and discover
+                    our travel services.
+                </p>
+
+                <a href="#home" class="btn btn-primary">
+                    Visit
+                </a>
+
+            </div>
+
+
+            <div class="page-card">
+
+                <div class="page-icon">🕋</div>
+
+                <h3>Umrah & Hajj</h3>
+
+                <p>
+                    Learn about our spiritual travel
+                    packages and services.
+                </p>
+
+                <a href="#packages" class="btn btn-primary">
+                    Explore
+                </a>
+
+            </div>
+
+
+            <div class="page-card">
+
+                <div class="page-icon">✈️</div>
+
+                <h3>Travel Services</h3>
+
+                <p>
+                    Air tickets, visas, hotels and
+                    other travel services.
+                </p>
+
+                <a href="#services" class="btn btn-primary">
+                    View Services
+                </a>
+
+            </div>
+
+
+            <div class="page-card">
+
+                <div class="page-icon">📞</div>
+
+                <h3>Contact Us</h3>
+
+                <p>
+                    Contact our team for bookings and
+                    travel enquiries.
+                </p>
+
+                <a href="#contact" class="btn btn-primary">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Our Services</h2>
+
+            <p>
+                We help make your journey easy,
+                comfortable and memorable.
+            </p>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <div class="service-icon">🕋</div>
+                <h3>Umrah Packages</h3>
+                <p>
+                    Plan your spiritual journey with
+                    our Umrah travel services.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🕌</div>
+                <h3>Hajj Packages</h3>
+                <p>
+                    Travel for Hajj with carefully
+                    arranged travel solutions.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">✈️</div>
+                <h3>Air Tickets</h3>
+                <p>
+                    Domestic and international flight
+                    ticket booking services.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🛂</div>
+                <h3>Visa Services</h3>
+                <p>
+                    Assistance with visa processing
+                    and travel documentation.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏨</div>
+                <h3>Hotel Booking</h3>
+                <p>
+                    Find comfortable accommodation
+                    for your travel needs.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌍</div>
+                <h3>Tour Packages</h3>
+                <p>
+                    Explore destinations with
+                    customized travel packages.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Contact Us</h2>
+
+            <p>
+                Get in touch with Air Madina Travels
+                for your next journey.
+            </p>
+
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <h3>Air Madina Travels</h3>
+
+                <div class="contact-item">
+
+                    <strong>📍 Office Address</strong>
+
+                    <span>
+                        Lift-14, Dhaka City Heart,
+                        Arambag, Dhaka
+                    </span>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>📞 Phone</strong>
+
+                    <a href="tel:01967233633">
+                        01967233633
+                    </a>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>📱 WhatsApp</strong>
+
+                    <a
+                        href="https://wa.me/8801967233633"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Chat with us on WhatsApp
+                    </a>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>📧 Email</strong>
+
+                    <a href="mailto:maidacbd1@gmail.com">
+                        maidacbd1@gmail.com
+                    </a>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>📧 Email</strong>
+
+                    <a href="mailto:airrmadinat@gmail.com">
+                        airrmadinat@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <form
+                class="contact-form"
+                onsubmit="sendMessage(event)">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="service">
+                        Service
+                    </label>
+
+                    <select id="service" required>
+
+                        <option value="">
+                            Select a service
+                        </option>
+
+                        <option>Umrah Package</option>
+                        <option>Hajj Package</option>
+                        <option>Air Ticket</option>
+                        <option>Visa Service</option>
+                        <option>Hotel Booking</option>
+                        <option>Tour Package</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Tell us about your travel plans..."
+                        required></textarea>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn submit-btn">
+
+                    Send Enquiry
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <img
+            src="1000017357.jpg"
+            alt="Air Madina Travels Logo">
+
+        <h3>
+            Air Madina <span>Travels</span>
+        </h3>
+
+    </div>
+
+    <p>Your trusted travel partner.</p>
+
+    <p>
+        📍 Lift-14, Dhaka City Heart, Arambag, Dhaka
+    </p>
+
+    <p>
+        📞 01967233633 
+    </p>
+
+    <p>
+        📧 maidacbd1@gmail.com |
+        airrmadinat@gmail.com
+    </p>
+
+    <p style="margin-top:15px;">
+        © <span id="year"></span>
+        Air Madina Travels.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/8801967233633"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Air Madina Travels on WhatsApp">
+
+    ☎
+
+</a>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    // Mobile navigation
+
+    function toggleMenu() {
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+        navLinks.classList.toggle("active");
+
+    }
+
+
+    // Close menu after clicking a link
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                document
+                    .getElementById("navLinks")
+                    .classList.remove("active");
+
+            });
+
+        });
+
+
+    // WhatsApp enquiry form
+
+    function sendMessage(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value;
+
+        const phone =
+            document.getElementById("phone").value;
+
+        const service =
+            document.getElementById("service").value;
+
+        const message =
+            document.getElementById("message").value;
+
+        const whatsappMessage =
+            "Hello Air Madina Travels!%0A%0A" +
+            "Name: " + encodeURIComponent(name) +
+            "%0APhone: " + encodeURIComponent(phone) +
+            "%0AService: " + encodeURIComponent(service) +
+            "%0AMessage: " + encodeURIComponent(message);
+
+        window.open(
+            "https://wa.me/8801967233633?text=" +
+            whatsappMessage,
+            "_blank"
+        );
+
+    }
+
+
+    // Current year
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
